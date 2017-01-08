@@ -1,0 +1,25 @@
+version: '2' # specify docker-compose version
+
+# Define the services/containers to be run
+services:
+  koa: # name of the first service
+    build: app # specify the directory of the Dockerfile
+    image: koa-server:v1 #Name the build image with this name
+    container_name: koa-server # the container will be accesible in the network by the same host name
+    volumes:
+      - ./app:/usr/src/app/code # Mount the host's code's folder as Volume in container
+    ports:
+      - "3000:3000" # specify port forewarding
+    links:
+      - database # db is reachable from web at the hostnames db and database:
+
+  database: # name of the third service
+    container_name: db-server
+    build: database
+    image: db-server:v1
+    environment:
+      - DB_NAME=db
+      - DB_USER=admin
+      - DB_PASS=password
+#    ports:
+#      - "5432:5432" # specify port forewarding

@@ -1,16 +1,10 @@
 # How to NOT to Dockerize an app
 
-We are super exited about docker, we give a flying fuck about reading the complete documentation and we start writing our Dockerfile which is going to have PostgreSQL.
-
-Lets do it!
-
-Thanks to Volmar for this example :), we are learning together how now to do it xD
-
+We are super exited about docker and we give a flying fuck about reading the complete documentation so lets start writing our Dockerfile which is going to have PostgreSQL.
 
 We start using ubuntu because that's what we are going to use in production, great.
 ```
 FROM ubuntu:yakkety
-MAINTAINER Volmar Machado "qi.volmar@gmail.com"
 ```
 
 Install base programs, create an user, regular stuff...

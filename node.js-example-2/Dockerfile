@@ -1,6 +1,5 @@
 FROM ubuntu:yakkety
-MAINTAINER Volmar Machado "qi.volmar@gmail.com"
-# Thanks to Volmar for this example :), we are learning together how now to do it xD
+
 RUN apt-get update && apt-get install -y wget
 #&& rm -rf /var/lib/apt/lists/*
 
